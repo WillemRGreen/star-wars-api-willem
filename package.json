@@ -12,10 +12,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "CI=true react-scripts test --colors",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "vercel -v"
+    "predeploy": "npm run build",
+    "deploy": "vercel --prod"
   },
   "eslintConfig": {
     "extends": "react-app"
